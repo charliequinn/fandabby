@@ -36,5 +36,5 @@ Resources:
                   - secretsmanager:GetSecretValue
 Outputs:
   TaskRoleArn:
-    Value: !Ref TaskRole
+    Value: !GetAtt  TaskRole.Arn
     Description: ARN of Task Role
