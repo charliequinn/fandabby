@@ -60,6 +60,7 @@ jobs:
             - VPC=vpc-0db68c8942cc26bb8
             - Subnet1=subnet-074b745d4787a36ee
             - Subnet2=subnet-0ac13ac35abfbb098
+            - echo "$(cat iam-output.txt)"
           capabilities:
             - CAPABILITY_NAMED_IAM
             - CAPABILITY_AUTO_EXPAND
