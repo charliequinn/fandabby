@@ -100,7 +100,7 @@ Resources:
               ContainerPort: 80
       Cpu: '512'
       ExecutionRoleArn: arn:aws:iam::502937263541:role/ecsTaskExecutionRole
-      TaskRoleArn: TaskRoleArn
+      TaskRoleArn: !Ref TaskRoleArn
       Memory: '1024'
       NetworkMode: 'awsvpc'
       Family: fandabbyTasks
