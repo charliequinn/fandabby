@@ -9,6 +9,8 @@ Parameters:
     Type: AWS::EC2::Subnet::Id
   ImageURI:
     Type: String
+  TaskRoleArn:
+    Type: String
 Transform:
   - AWS::CodeDeployBlueGreen
 Hooks:
@@ -98,6 +100,7 @@ Resources:
               ContainerPort: 80
       Cpu: '512'
       ExecutionRoleArn: arn:aws:iam::502937263541:role/ecsTaskExecutionRole
+      TaskRoleArn: TaskRoleArn
       Memory: '1024'
       NetworkMode: 'awsvpc'
       Family: fandabbyTasks
