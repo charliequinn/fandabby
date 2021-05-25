@@ -35,6 +35,19 @@ jobs:
       deploy:
         - provider: cloudformation
           region: us-east-2
+          template: infra/iam.yml
+          stack_name: fandabbyIAM
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          output_file: ./iam-output.txt
+          edge: true
+          cleanup: false
+          capabilities:
+            - CAPABILITY_NAMED_IAM
+          on:
+            branch: main
+        - provider: cloudformation
+          region: us-east-2
           template: infra/ecs.yml
           stack_name: fandabbyECS
           access_key_id: $AWS_ACCESS_KEY_ID
