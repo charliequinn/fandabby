@@ -11,6 +11,8 @@ Parameters:
     Type: String
   TaskRoleArn:
     Type: String
+  EnvironmentName:
+    Type: String 
 Transform:
   - AWS::CodeDeployBlueGreen
 Hooks:
@@ -103,7 +105,7 @@ Resources:
       TaskRoleArn: !Ref TaskRoleArn
       Environment:
         - Name: ENVIRONMENT_NAME
-          Value: sandbox
+          Value: !Ref EnvironmentName
       Memory: '1024'
       NetworkMode: 'awsvpc'
       Family: fandabbyTasks
