@@ -76,7 +76,7 @@ if os.environ.get("ENVIRONMENT_NAME", "") in ["prod", "sandbox"]:
     logging_conf["handlers"]["watchtower"] = {
         "level": root_level,
         "class": "watchtower.CloudWatchLogHandler",
-        "log_group": "project_name",
+        "log_group": "fandabby",
         "stream_name": "logstream-{strftime:%y-%m-%d}",
         "formatter": "default",
     }
