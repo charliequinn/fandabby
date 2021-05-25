@@ -101,6 +101,9 @@ Resources:
       Cpu: '512'
       ExecutionRoleArn: arn:aws:iam::502937263541:role/ecsTaskExecutionRole
       TaskRoleArn: !Ref TaskRoleArn
+      Environment:
+        - Name: ENVIRONMENT_NAME
+          Value: sandbox
       Memory: '1024'
       NetworkMode: 'awsvpc'
       Family: fandabbyTasks
